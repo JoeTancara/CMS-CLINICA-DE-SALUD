@@ -1,0 +1,4 @@
+# Permite servir imágenes pero bloquea la ejecución de scripts subidos
+<FilesMatch "\.(php|phtml|php3|php4|php5|pl|py|cgi|sh)$">
+    Require all denied
+</FilesMatch>

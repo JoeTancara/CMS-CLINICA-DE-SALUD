@@ -1,0 +1,12 @@
+RewriteEngine On
+
+# Si el archivo o carpeta solicitado existe físicamente (css, js, img, uploads...), se sirve tal cual.
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Todo lo demás pasa por el front controller.
+RewriteRule ^ index.php [QSA,L]
+
+# Evita que se liste el contenido de /uploads o /database directamente
+Options -Indexes
